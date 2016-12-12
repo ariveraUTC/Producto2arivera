@@ -1,0 +1,40 @@
+@(platos: java.util.List[Platoalacarta])
+<html>
+	<head>
+	
+	
+	
+	</head>
+	<body>
+	<table border=1>
+	<tr>
+		<td>Identificación Plato</td>
+		<td>Nombre Plato</td>
+		<td>Precio Plato</td>
+		<td>Fecha Plato</td>
+		
+	</tr>
+	@for(platoalacarta <- platos){
+	<tr>
+		<td>@platoalacarta.id</td>
+		<td>@platoalacarta.name</td>
+		<td>@platoalacarta.precio</td>
+		<td>
+		@if(platoalacarta.fecha == null){
+		<em>-</em>		
+		} else {
+		@platoalacarta.fecha.format("dd MMM yyy")
+		}
+		
+		</td>
+		
+	</tr>
+	}
+	
+	
+	
+	</table>
+	
+	</body>
+
+</html>
